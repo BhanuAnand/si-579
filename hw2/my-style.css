@@ -1,0 +1,18 @@
+  body {
+    background-color: lightblue;
+  }
+  
+  h1 {
+    color: navy;
+  }
+
+  ul.a {
+    list-style-type: square;
+  }
+
+  #imgId {
+    margin: auto;
+    border: 3px solid #2123ad;
+    width: 200px;
+    height: 250px;
+  }
