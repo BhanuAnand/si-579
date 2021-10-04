@@ -45,7 +45,7 @@ convertbtn.addEventListener('click', () => {
 
 function convertTemp(fTemp){
     //Calculate the temperature here
-    let cTemp = Math.round((fTemp-32) / 1.8);
+    let cTemp = Math.round((fTemp-32) * 5/9);
     //Send the calculated temperature to HTML
     const cOutSpan = document.getElementById("c-output");
     cOutSpan.textContent = cTemp;
