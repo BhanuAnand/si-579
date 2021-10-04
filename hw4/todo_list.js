@@ -12,7 +12,11 @@
         }
     }
 
-    add_task.addEventListener('keydown', addTasks);
+    task_description_input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            addTasks();
+        }
+    });
     add_task.addEventListener('click', addTasks)
 
     function addTasks(){
@@ -43,11 +47,10 @@
             let hrs = d.getHours() >= 12 ? d.getHours()-12 : d.getHours();
             let min = d.getMinutes();
             let sec = d.getSeconds();
-            if(sec == 0){
-                sec = "00"
-            }
+            
             let ampm = d.getHours() >= 12 ? 'PM' : 'AM';
-            spn.appendChild(document.createTextNode("due " + mon + "/" + day + "/" + year + " " + hrs + ":" + min + ":" + sec + " " + ampm));
+            spn.appendChild(document.createTextNode("due " + mon + "/" + day + "/" + year + " " 
+                                                + hrs + ":" + ('0' + min).slice(-2) + ":" + ('0' + sec).slice(-2) + " " + ampm));
             li.appendChild(spn);
         }
 
