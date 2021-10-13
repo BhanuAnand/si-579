@@ -18,6 +18,10 @@ showRhymesButton.addEventListener('click', () => {
     rhymesOutput.innerHTML = '';
     word = wordInput.value;
     getRhymes(word, (result) => {
+        if(Object.keys(result).length === 0){
+            rhymesOutput.innerHTML = 'no rhymes';
+            return;
+        }
         for(const key in result) {
             const rhyme = result[key];
             
